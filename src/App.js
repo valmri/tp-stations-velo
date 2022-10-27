@@ -9,8 +9,8 @@ function App() {
   return (
     <div className='app'>
       <aside className='menu'>
-        <h1 className='titre'>Stations vélos</h1>
-        <ListeContrats></ListeContrats>
+        <div className='titre'>Stations vélos</div>
+        <RequeteContrat></RequeteContrat>
       </aside>
       <div className='map'></div>
     </div>

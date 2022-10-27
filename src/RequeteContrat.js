@@ -46,13 +46,15 @@ export default class RequeteContrat extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          {villes.map(item => (
-            <li key={item.name}>
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        <div className="listeContrats">
+          <ul>
+            {villes.map(item => (
+              <li key={item.name}>
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       );
     }
   }
