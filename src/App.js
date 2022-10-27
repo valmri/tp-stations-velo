@@ -3,6 +3,7 @@ import './App.css';
 import RequeteContrat from './RequeteContrat.js';
 import RequeteStation from './RequeteStation.js';
 import ListeContrats from './ListeContrats';
+import Map from './Map';
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
         <h1 className='titre'>Stations vélos</h1>
         <ListeContrats></ListeContrats>
       </aside>
-      <div className='map'></div>
+      <div className='map'>
+        <Map></Map>
+      </div>
     </div>
   );
 }
