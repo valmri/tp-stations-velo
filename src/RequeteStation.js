@@ -9,7 +9,7 @@ class RequeteStation extends React.Component {
     }
   
     componentDidMount() {
-      fetch("https://api.example.com/items")
+      fetch("https://.example.com/items")
         .then(res => res.json())
         .then(
           (result) => {
