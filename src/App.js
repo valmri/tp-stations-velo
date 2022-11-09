@@ -1,18 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import RequeteContrat from './RequeteContrat.js';
-import RequeteStation from './RequeteStation.js';
-import ListeContrats from './ListeContrats';
+import './CSS/App.css';
+import RequeteContrat from './components/RequeteContrat.js';
+import Map from './components/Map.js';
 
 
 function App() {
   return (
     <div className='app'>
-      <aside className='menu'>
+      <div className='menu'>
         <div className='titre'>Stations vélos</div>
         <RequeteContrat></RequeteContrat>
-      </aside>
-      <div className='map'></div>
+      </div>
+      <div className='map'>
+        <Map></Map>
+      </div>
     </div>
   );
 }

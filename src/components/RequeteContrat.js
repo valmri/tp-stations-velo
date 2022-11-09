@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export default class RequeteContrat extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +38,6 @@ export default class RequeteContrat extends React.Component {
 
   render() {
     const { error, isLoaded, villes } = this.state;
-
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -49,13 +47,15 @@ export default class RequeteContrat extends React.Component {
         <div className="listeContrats">
           <ul>
             {villes.map(item => (
-              <li key={item.name}>
-                {item.name}
-              </li>
+              <li key={item.name}><a>
+                {item.name.replace(/^./, item.name[0].toUpperCase())}
+              </a></li>
             ))}
           </ul>
         </div>
       );
     }
   }
+
+
 }
