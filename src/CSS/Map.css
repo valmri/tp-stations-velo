@@ -1,0 +1,71 @@
+.map {
+    flex-grow: 7;
+}
+
+.leaflet-container {
+    height: 100%;
+}
+
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    border: 2px solid #000;
+}
+
+.leaflet-popup-content-wrapper {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px #000 solid;
+    border-radius: 30px;
+    box-shadow: 0px 1px 1px #000;
+}
+
+.leaflet-popup-tip-container {
+    margin-top: -2px!important;
+}
+
+.station_header {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    border-bottom: 1px solid #000;
+    padding: 15px 0px;
+}
+
+.station_header-item {
+    flex-grow: 1;
+}
+
+.station_header-item h2 {
+    font-size: 20px;
+}
+
+.station_header-item h2,
+.station_header-item p {
+    margin: 0px!important;
+}
+
+.status {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.status-ferme {
+    background-color: #E8A5A0;
+}
+
+.status-ouvert {
+    background-color: #B4E8C8;
+}
+
+.station_infos-item {
+    padding: 1px 10px;
+    margin: 5px 0px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}

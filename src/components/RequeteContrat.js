@@ -44,15 +44,14 @@ export default class RequeteContrat extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className="listeContrats">
-          <ul>
+          <ul className="contrats">
             {villes.map(item => (
               <li key={item.name}><a>
+                <i className="las la-map-marker"></i>
                 {item.name.replace(/^./, item.name[0].toUpperCase())}
               </a></li>
             ))}
           </ul>
-        </div>
       );
     }
   }

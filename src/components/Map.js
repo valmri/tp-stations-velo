@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/App.css';
+import '../CSS/Map.css';
 import { MapContainer, TileLayer} from 'react-leaflet'
 import RequeteStation from './RequeteStation';
 import 'leaflet/dist/leaflet.css'
