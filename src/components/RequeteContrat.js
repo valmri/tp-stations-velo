@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default class RequeteContrat extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class RequeteContrat extends React.Component {
         (result) => {
           let lesVilles = []
           result.forEach(element => {
-            if (element.country_code == "FR" && element.name != "jcdecauxbike") {
+            if (element.country_code === "FR" && element.name !== "jcdecauxbike") {
               lesVilles.push(element)
             }
           });
@@ -46,7 +46,7 @@ export default class RequeteContrat extends React.Component {
       return (
           <ul className="contrats">
             {villes.map(item => (
-              <li key={item.name}><a>
+              <li key={item.name} onClick={() => this.props.childToParent(item.name)}><a>
                 <i className="las la-map-marker"></i>
                 {item.name.replace(/^./, item.name[0].toUpperCase())}
               </a></li>

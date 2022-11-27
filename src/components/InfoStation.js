@@ -21,9 +21,7 @@ export default class InfoStation extends React.Component {
             element = element.replace(/([A-Z])/g, ' $1')
             element = element.charAt(0).toUpperCase() + element.slice(1);
             typeVelo.push(element)
-
         }
-        console.log(typeVelo);
 
         function getStatus(etat) {
             if(etat) {

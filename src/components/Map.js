@@ -6,16 +6,29 @@ import 'leaflet/dist/leaflet.css'
 
 class Map extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            updateVille: null
+        };
+        this.x = this.props.x || 46
+        this.y = this.props.y || 2
+    }
+
     
 
+    // TODO : Encapsuler positions dans attributs et faire varier en fonction des paramètres ONCLICK DES VILLES tout
+    // en prévoyant une valeur par defaut
     render() {
+        console.log('MAPP ', this.props.contrat)
         return (
-            <MapContainer center={[45.750000, 4.850000]} zoom={13} scrollWheelZoom={true}>
+            <MapContainer center={[this.x, this.y]} zoom={6} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <RequeteStation></RequeteStation>
+                <RequeteStation contrat={this.props.contrat}></RequeteStation>
             </MapContainer>
         );
     }
