@@ -16,12 +16,7 @@ class Map extends React.Component {
         this.y = this.props.y || 2
     }
 
-    
-
-    // TODO : Encapsuler positions dans attributs et faire varier en fonction des paramètres ONCLICK DES VILLES tout
-    // en prévoyant une valeur par defaut
     render() {
-        console.log('MAPP ', this.props.contrat)
         return (
             <MapContainer center={[this.x, this.y]} zoom={6} scrollWheelZoom={true}>
                 <TileLayer

@@ -59,7 +59,7 @@ export default class RequeteStation extends React.Component {
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
-            if(this.state.stations.name != this.stations.name) {
+            if(!error && isLoaded && stations) {
                 return (
                     <div>
                         {
