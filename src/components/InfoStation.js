@@ -8,7 +8,7 @@ export default class InfoStation extends React.Component {
         this.number = test[0]
         this.name = test[1]
         this.address = props.address
-        this.status = props.status === "OPEN" ? true : false
+        this.status = props.status
         this.stands = props.stands
     }
 
@@ -24,11 +24,11 @@ export default class InfoStation extends React.Component {
         }
 
         function getStatus(etat) {
-            if(etat) {
+            let element = "<span class=\"status status-ferme\"></span>";
+            if(etat === 'OPEN') {
                 return "<span class=\"status status-ouvert\"></span>";
-            } else {
-                return "<span class=\"status status-ferme\"></span>";
             }
+            return element;
         }
 
         return (

@@ -14,40 +14,32 @@ export default class RequeteStation extends React.Component {
         };
     }
 
-    componentDidUpdate() {
-        fetch("https://api.jcdecaux.com/vls/v3/stations?apiKey=7886a12c53604b2668a08582a04795afcc9375b0&contract="+this.props.contrat)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    /*
-                    let lesStations = []
-                    //let contractName = ['rouen','lyon','toulouse','amiens','mulhouse',"nancy",'creteil','cergy-pontoise','marseille','nantes']
-                    //let contractName = ['lyon']
-                    let contractName = [this.props.contrat];
+    componentDidUpdate(prevProps, prevState) {
 
-                    result.forEach(element => {
-                        if (contractName.includes(element.contractName)) {
-                            lesStations.push(element)
-                        }
-                    });
-                    */
+        if(prevState.stations === this.state.stations){ 
+            fetch("https://api.jcdecaux.com/vls/v3/stations?apiKey=7886a12c53604b2668a08582a04795afcc9375b0&contract="+this.props.contrat)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+    
+                        this.setState({
+                            isLoaded: true,
+                            stations: result
+                        });
+    
+                    },
+    
+                    (error) => {
+                        this.setState({
+                            isLoaded: true,
+                            error
+                        });
+                    }
+    
+    
+                )
+        }
 
-                    this.setState({
-                        isLoaded: true,
-                        stations: result
-                    });
-
-                },
-
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-
-
-            )
     }
 
     render() {
@@ -61,14 +53,16 @@ export default class RequeteStation extends React.Component {
         } else {
             if(!error && isLoaded && stations) {
                 return (
-                    <div>
+                    <div className="maDIVquirendouf">
                         {
-                            stations.map(item => (
-                                <Marker position={[item.position.latitude, item.position.longitude]} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
-                                    <Popup>
-                                        <InfoStation name={item.name} address={item.address} status = {item.status} stands = {item.totalStands.availabilities}></InfoStation>
-                                    </Popup>
-                                </Marker>
+                            stations.map(station => (
+                                <div className="stations">
+                                    <Marker position={[station.position.latitude, station.position.longitude]} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
+                                        <Popup>
+                                            <InfoStation name={station.name} address={station.address} status = {station.status} stands = {station.totalStands.availabilities}></InfoStation>
+                                        </Popup>
+                                    </Marker>
+                                </div>
                             ))
                         }
                     </div>
